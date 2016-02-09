@@ -9,7 +9,11 @@ else
 	IMAGE=$(PROJECT):$(TAG)
 endif
 
+clean:
+	rm -rf vendor/*
+
 install: Dockerfile
+	git clone git@github.com:edc/bass.git vendor/bass
 	$(MAKE) build
 
 build:
